@@ -37,39 +37,39 @@ def launch():
 				lat = ''
 
 			if 'city' in json_data['data']:
-				city = str(json_data['data']['city']).encode('utf-8').strip()
+				city = str(json_data['data']['city']).strip()
 			else:
 				city = ''
 
 			if 'time' in json_data['data']:
-				time = str(json_data['data']['time']['s']).encode('utf-8').strip()
+				time = str(json_data['data']['time']['s']).strip()
 			else:
 				time = ''
 
 			city = json_data['data']['city']['name']
 
 			if 'pm25' in json_data['data']['iaqi']:
-				pm25 = str(json_data['data']['iaqi']['pm25']['v']).encode('utf-8').strip()
+				pm25 = str(json_data['data']['iaqi']['pm25']['v']).strip()
 			else:
 				pm25 = ''
 
 			if 'pm10' in json_data['data']['iaqi']:
-				pm10 = str(json_data['data']['iaqi']['pm10']['v']).encode('utf-8').strip()
+				pm10 = str(json_data['data']['iaqi']['pm10']['v']).strip()
 			else:
 				pm10 = ''
 
 			if 'so2' in json_data['data']['iaqi']:
-				so2 = str(json_data['data']['iaqi']['so2']['v']).encode('utf-8').strip()
+				so2 = str(json_data['data']['iaqi']['so2']['v']).strip()
 			else:
 				so2 = ''
 
 			if 'o3' in json_data['data']['iaqi']:
-				o3 = str(json_data['data']['iaqi']['o3']['v']).encode('utf-8').strip()
+				o3 = str(json_data['data']['iaqi']['o3']['v']).strip()
 			else:
 				o3 = ''
 
 			if 'co' in json_data['data']['iaqi']:
-				co = str(json_data['data']['iaqi']['co']['v']).encode('utf-8').strip()
+				co = str(json_data['data']['iaqi']['co']['v']).strip()
 			else:
 				co = ''
 
