@@ -5,8 +5,9 @@ from os import environ
 from importlib import reload
 from flask import Flask
 
-#reload(sys)
-#sys.setdefaultencoding('utf8')
+if sys.version[0] == '2':
+    reload(sys)
+    sys.setdefaultencoding("utf-8")
 
 start_str_request ="https://api.waqi.info/feed/" 
 end_str_request = "/?token=1131b4b44f7cc5c89854245f4f65e2110ba27a5d"
