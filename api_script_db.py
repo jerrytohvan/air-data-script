@@ -29,8 +29,8 @@ def launch():
 			json_data = json.loads(query.text)
 
 			if 'geo' in json_data['data']['city']:
-				lon = str(json_data['data']['city']['geo'][0]).encode('utf-8').strip()
-				lat = str(json_data['data']['city']['geo'][1]).encode('utf-8').strip()
+				lon = str(json_data['data']['city']['geo'][0]).encode('utf-8').strip().encode('utf-8')
+				lat = str(json_data['data']['city']['geo'][1]).encode('utf-8').strip().encode('utf-8')
 			else: 
 				lon = ''
 				lat = ''
