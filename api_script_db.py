@@ -2,9 +2,10 @@
 
 import requests,json,sys,time,psycopg2
 from os import environ
+from importlib import reload
 from flask import Flask
 
-reload(sys)
+#reload(sys)
 sys.setdefaultencoding('utf8')
 
 start_str_request ="https://api.waqi.info/feed/" 
