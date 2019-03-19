@@ -1,6 +1,6 @@
 
 
-import requests,json,pipreqs,sys,time,psycopg2
+import requests,json,sys,time,psycopg2
 from os import environ
 from flask import Flask
 
