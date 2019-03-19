@@ -1,6 +1,8 @@
 
 
 import requests,json,csv,psycopg2,sys,time
+from os import environ
+from flask import Flask
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -97,4 +99,10 @@ while(True):
 	launch()
 	print("script sleeping...")
 	time.sleep(60*60)
+
+
+
+
+app = Flask(__name__)
+app.run(environ.get('PORT'))
 
