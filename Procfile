@@ -1,1 +1,1 @@
-web: python api_script_db.py
+worker: python api_script_db.py
