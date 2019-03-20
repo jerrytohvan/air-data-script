@@ -87,8 +87,7 @@ def launch():
 			record_to_insert = (city,lon,lat,pm25, pm10, so2, o3, co,time)
 			cursor.execute(postgres_insert_query, record_to_insert)
 			connection.commit()
-			count = cursor.rowcount
-			print (r)
+			#print (r)
 	except (Exception, psycopg2.Error) as error :
 	    if(connection):
 	        print("Failed to insert record into mobile table", error)
