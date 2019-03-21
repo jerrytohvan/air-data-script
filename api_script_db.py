@@ -37,7 +37,7 @@ def launch():
 		connection = psycopg2.connect(user="eksmcidgmnrgma", password="fe2c2308d89d9f66ac2efcf1e5eebac8363d4d112e006a985523a3960bfb18ad", host="ec2-50-17-227-28.compute-1.amazonaws.com", port="5432", database="d96iof88teppel")
 		cursor = connection.cursor()
 		postgres_insert_query = """ INSERT INTO air_data (city,lon,lat,pm25,pm10,so2,o3,co,datetimestamp) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-		for r in cities1:
+		for r in cities2:
 			query = requests.get(start_str_request+r+end_str_request)
 			json_data = json.loads(query.text)
 
