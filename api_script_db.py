@@ -17,7 +17,9 @@ end_str_request = "/?token=1131b4b44f7cc5c89854245f4f65e2110ba27a5d"
 
 
 cities1=["indonesia/jakarta/us-consulate/central","indonesia/jakarta/us-consulate/south",
-"singapore/east","singapore/south","singapore/central","singapore/north","singapore/west","vietnam/ho-chi-minh-city/us-consulate", "vietnam/da-nang","thailand/koh-chang-sub-district-health-promoting-hospital-maesai", "thailand/chiangrai---gaia-station-05","thailand/chiangrai---gaia-station-06","thailand/chiangrai---gaia-station-02","thailand/chiangrai---gaia-station-01","thailand/chiangrai---gaia-station-07","thailand/chiang-rai-hospital",
+"singapore/east","singapore/south","singapore/central","singapore/north","singapore/west"]
+	 
+not_stored = ["vietnam/ho-chi-minh-city/us-consulate", "vietnam/da-nang","thailand/koh-chang-sub-district-health-promoting-hospital-maesai", "thailand/chiangrai---gaia-station-05","thailand/chiangrai---gaia-station-06","thailand/chiangrai---gaia-station-02","thailand/chiangrai---gaia-station-01","thailand/chiangrai---gaia-station-07","thailand/chiang-rai-hospital",
 "thailand/chiangrai/maesai-health-office","thailand/chiangrai---gaia-station-03","thailand/chiangrai/natural-resources-and-environment-office","thailand/fang-hospital","thailand/chai-prakan-hospital","thailand/muang-na-sub-district-municipality","thailand/nan/a.-nanoi","thailand/phrao-hospital","thailand/chiangmai/phrao-gaia04",
 "thailand/chiang-dao-public-heath-office", "thailand/mae-taeng-hospital","thailand/arunothai-sub-district-health-promoting-hospital","thailand/wiang-haeng-hospital","thailand/mae-hong-son/pai-hospital","thailand/pang-ma-pha-hospital","thailand/mae-hong-son/srisangwan-hospital","thailand/mae-hongson/natural-resources-and-environment-office","thailand/mae-hong-son/hongsonsuksa-school","thailand/khun-yuam-hospital",
 "thailand/mae-sa-sub-district-health-promoting-hospital","thailand/mae-hae-nuea-sub-district-health-promoting-hospital","thailand/debaratana-hospital","thailand/kong-khaek-sub-district-administrative-organization","thailand/chom-tong-hospital","thailand/mae-wang-hospital","thailand/chiangmai/maerim---prem","thailand/cnx/t.-mae-ram","thailand/nakornping-hospital",
@@ -40,7 +42,7 @@ def launch():
 		connection = psycopg2.connect(user="eksmcidgmnrgma", password="fe2c2308d89d9f66ac2efcf1e5eebac8363d4d112e006a985523a3960bfb18ad", host="ec2-50-17-227-28.compute-1.amazonaws.com", port="5432", database="d96iof88teppel")
 		cursor = connection.cursor()
 		postgres_insert_query = """ INSERT INTO air_data (city,lon,lat,pm25,pm10,so2,o3,co,datetimestamp) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-		for r in cities3:
+		for r in cities1:
 			query = requests.get(start_str_request+r+end_str_request)
 			json_data = json.loads(query.text)
 
