@@ -30,6 +30,9 @@ cities2=["thailand/hang-dong-hospital","thailand/mae-wang-hospital","thailand/ch
 "thailand/samut-prakan/city-hall","thailand/bangkok/thai-meteorological-department-bangna","thailand/bangkok/ratburana-post-office","thailand/bangkok/thai-meteorological-department-bangna","thailand/samut-prakan/national-housing-authority-bangplee","thailand/chonburi/general-education-office","thailand/chachoengsao/wang-yen-subdistrict-administrative","thailand/chonburi/health-promotion-hospital-ban-khao-hin","thailand/saraburi/khao-noi-fire-station","thailand/chonburi/laem-chabang-municipal-stadium","thailand/pluakdaeng-district-health-office","thailand/rayong/field-crop-research-center",
 "thailand/nakhon-ratchasima/municipal-waste-water-pumping-station","thailand/mobile-8","thailand/rayong/agricultural-office","thailand/rayong/government-center"]
 
+
+cities3= ["thailand/national-research-council-of-thailand-nrct","thailand/bangkok/ratburana-post-office","thailand/samut-prakan/residence-for-dept.-of-primary-industries-and-mines","thailand/samut-prakan/prabadang-rehabiltation-center","thailand/samut-prakan/city-hall","thailand/bangkok/thai-meteorological-department-bangna","thailand/rama-iv-expressway-fes","thailand/bangkok/chulalongkorn-hospital","thailand/bangkok/thonburi-power-sub-station","thailand/bangkok/bansomdejchaopraya-rajabhat-university",
+	 "thailand/bangkok/national-housing-authority-dindaeng","thailand/the-thailand-research-fund-trf","thailand/bangkok/public-relations-department","thailand/bangkok/national-housing-authority-huaykwang","thailand/nonthaburi/egat","thailand/bangkok/chokchai-police-station","thailand/bangkok/bodindecha-sing-singhaseni-school","thailand/bangkok/national-housing-authority-klongchan","thailand/national-research-council-of-thailand-nrct","thailand/samut-prakan/city-hall"]
 def launch():
 	print("launching script...")
 	# with open('output.csv', 'a') as f:
@@ -37,7 +40,7 @@ def launch():
 		connection = psycopg2.connect(user="eksmcidgmnrgma", password="fe2c2308d89d9f66ac2efcf1e5eebac8363d4d112e006a985523a3960bfb18ad", host="ec2-50-17-227-28.compute-1.amazonaws.com", port="5432", database="d96iof88teppel")
 		cursor = connection.cursor()
 		postgres_insert_query = """ INSERT INTO air_data (city,lon,lat,pm25,pm10,so2,o3,co,datetimestamp) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-		for r in cities2:
+		for r in cities3:
 			query = requests.get(start_str_request+r+end_str_request)
 			json_data = json.loads(query.text)
 
